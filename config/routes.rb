@@ -1,4 +1,11 @@
 Castle::Application.routes.draw do
+  devise_for :users, :path_names => { :sign_up => "register" }
+
+  root :to => "home#index"
+
+  match '/admin' => 'admin/dashboard#index', :as => :admin
+  # namespace :admin do
+  # end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

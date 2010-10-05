@@ -1,6 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+# require 'rails/all'
+
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "active_resource/railtie"
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -38,5 +42,12 @@ module Castle
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    # Mongodb
+    config.mongoid.logger = Logger.new($stdout, :warn)
+
+    # Devise
+    config.action_mailer.default_url_options = { :host => 'localhost:3000' }    
+    RPXNow.api_key = "1f6df458230e99c63f74877c6f8a66116766a339"
   end
 end

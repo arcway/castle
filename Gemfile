@@ -5,7 +5,24 @@ gem 'rails', '3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+# Authtication
+gem 'devise','1.1.3'
+gem 'devise_rpx_connectable'
+
+# Database
+gem 'mongo'
+gem 'bson'
+gem 'bson_ext', '1.1'
+gem 'mongoid', '2.0.0.beta.19'
+
+# Test
+group :test do
+  gem 'shoulda'
+  gem 'rspec-rails'
+  gem 'webrat'
+  gem 'cucumber'
+  gem 'factory_girl'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
